@@ -27,10 +27,10 @@ export default function AdminLoginPage() {
         router.push("/admin-role");
         toast.success("Login Successful admin");
       }else{
-        toast.error(res.statusText as any || "Login failed" );
+        toast.error(res.statusText as unknown as string || "Login failed" );
 
       }
-    } catch (error:any) {
+    } catch (error: unknown) {
       // Error handling
     }
   };

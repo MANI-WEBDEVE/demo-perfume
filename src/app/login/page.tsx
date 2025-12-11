@@ -37,7 +37,7 @@ export default function LoginPage() {
       toast.success('Logged in successfully');
       router.back();
       window.location.reload();
-    } catch (err: any) {
+    } catch (err: unknown) {
       const { toast } = await import('react-hot-toast');
       let message = 'Login failed';
       if (err?.response?.data) {
@@ -57,7 +57,7 @@ export default function LoginPage() {
       try {
         const res = await axios.get('http://localhost:3000/api/me')
         setEmailUser(res.data.email)
-      } catch (error:any) {
+      } catch (error: unknown) {
         toast.error("error",error.message)
       }
     }

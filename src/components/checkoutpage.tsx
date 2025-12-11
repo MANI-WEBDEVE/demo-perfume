@@ -39,7 +39,7 @@ export default function CheckoutPage() {
   const placedOrder = async () => {
   try {
     setIsloading(true);
-    const payload: any = {
+    const payload: unknown = {
       formData: {
         customer_name: formData.customer_name,
         address: formData.address,
@@ -74,7 +74,7 @@ export default function CheckoutPage() {
       router.push('/my-orders');
     }
     clearCart(); //  Cart bhi clear karein
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Order error:", error.response?.data || error.details.message);
     toast.error("Failed to place order check phone number Address postal code.");
   } finally {

@@ -14,7 +14,7 @@ type AdminCred = {
 
 export async function POST(request:NextRequest) {
     try{
-        let {email, password}: AdminCred | any= await request.json()
+        let {email, password}: AdminCred | unknown = await request.json()
         email = z.email({pattern: /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-\.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9\-]*\.)+[a-z]{2,}$/i}).parse(email)
         password = z.string().min(6).parse(password)
 

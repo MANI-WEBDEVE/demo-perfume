@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
       headers: { 'Content-Type': 'application/json' }
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (error instanceof z.ZodError) {
       return new Response(JSON.stringify({ error: 'Validation failed', details: error }), { status: 400 });
     }

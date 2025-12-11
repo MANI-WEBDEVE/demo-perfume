@@ -79,7 +79,7 @@ export async function PUT(
           )
           .end(buffer);
       });
-      imageUrl = (result as any).secure_url;
+      imageUrl = (result as unknown as { secure_url: string }).secure_url;
     }
 
     // 💾 4. DB update karein

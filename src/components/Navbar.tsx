@@ -31,7 +31,7 @@ export default function Navbar() {
           if (res.status === 404){
             router.push('/register')
           }
-        } catch (error:any) {
+        } catch (error: unknown) {
           toast.error("error",error.message)
         }
       }
