@@ -125,7 +125,7 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function ProductGrid() {
-const [perfumeData, setPerfumeData] = useState<Product[]|any>([]);
+const [perfumeData, setPerfumeData] = useState<Product[]>([]);
 const [isLoading, setIsLoading] = useState<boolean>(true);
   const get_perfume_data = async() => {
     try{

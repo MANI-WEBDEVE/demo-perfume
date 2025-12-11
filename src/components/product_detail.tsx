@@ -19,7 +19,7 @@ export default function ProductDetail() {
   const { id } = useParams();
   const { addToCart } = useCart();
 
-  const [product, useProduct] = useState<Product | any>()
+  const [product, useProduct] = useState<Product>()
   useEffect(() => {
     const fetchProduct = async () => {
       try {

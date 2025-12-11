@@ -32,9 +32,9 @@ type Order = {
 };
 
 export default function MyOrdersPage() {
-  const [orders, setOrders] = useState<any[]>([{}]);
+  const [orders, setOrders] = useState<Order[]>([{} as Order]);
   const [loading, setLoading] = useState(true);
-  const [perfumeDetail, setPerfumeDetail] = useState<any>(null);
+  const [perfumeDetail, setPerfumeDetail] = useState<Product | null>(null);
   const [perfumeId, setPerfumeId] = useState<number | null>(null);
   const [OrderDetailLoading, setOrderDetailLoading] = useState(true);
   const fetchOrders = async () => {

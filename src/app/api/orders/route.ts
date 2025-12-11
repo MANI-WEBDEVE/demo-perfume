@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
         ]
       );
     } 
-    let updateStock: { id: number; stock: number }[] = [];
+    const updateStock: { id: number; stock: number }[] = [];
 
     for (const item of items) {
       const res = await db.query(
