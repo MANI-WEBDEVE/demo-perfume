@@ -1,15 +1,15 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import Image from "next/image";
-import { ShoppingCart, Heart, Star, Clock } from "lucide-react";
-import { motion } from "framer-motion";
-import axios from "axios";
-import { useEffect, useState  } from "react";
-import { Product } from "@/data/mainProducts";
-import {ProductAnimationLoading} from "./Perfume_loading_Animation";
 import { useCart } from "@/context/CartContext";
+import { Product } from "@/data/mainProducts";
+import axios from "axios";
+import { motion } from "framer-motion";
+import { Heart, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { ProductAnimationLoading } from "./Perfume_loading_Animation";
 
 function formatPKR(value: number) {
   return `Rs. ${value.toLocaleString()}`;
@@ -27,6 +27,7 @@ export default function ProductDetail() {
         setProduct(response.data);
       } catch (error) {
         toast.error("Error fetching product data");
+        console.log(error)
       }
     };
     fetchProduct();

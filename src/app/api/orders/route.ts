@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
       userId = decoded.userId;
       
     } catch (error) {
-      return new Response('Unauthorized', { status: 401 });
+      return NextResponse.json({message:'Unauthorized', error}, { status: 401 });
     }
     if (!userId) {
       return NextResponse.json({ message: "Please Login" }, { status: 400 });

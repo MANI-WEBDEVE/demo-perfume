@@ -1,9 +1,8 @@
-import { NextRequest } from 'next/server';
-import { cookies } from 'next/headers';
-import { parse } from 'cookie';
+import { verifyToken } from '@/lib/auth';
 import db from '@/lib/db';
 import { v2 as cloudinary } from 'cloudinary';
-import { verifyToken } from '@/lib/auth';
+import { cookies } from 'next/headers';
+import { NextRequest } from 'next/server';
 
 // Cloudinary configure karein
 cloudinary.config({

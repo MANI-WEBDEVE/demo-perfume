@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { ShoppingCart, Heart, Star, Clock } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import axios from "axios";
-import { mainProducts, Product } from "@/data/mainProducts";
 import { useCart } from "@/context/CartContext";
 import { useSidebar } from "@/context/SidebarContext";
+import { Product } from "@/data/mainProducts";
+import axios from "axios";
+import { motion } from "framer-motion";
+import { Heart, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import Perfume_loading_Animation from "./Perfume_loading_Animation";
 
 function formatPKR(value: number) {
@@ -132,6 +132,7 @@ const [isLoading, setIsLoading] = useState<boolean>(true);
       const response = await axios.get(`http://localhost:3000/api/perfumes/`);
       setPerfumeData(response.data);  
     }catch(error){
+      console.log(error);
       setIsLoading(false);
     }finally{
       setIsLoading(false);

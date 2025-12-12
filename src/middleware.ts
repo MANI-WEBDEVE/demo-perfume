@@ -1,9 +1,7 @@
 export const runtime = "nodejs";
 
-import { NextRequest, NextResponse } from "next/server";
 import { verify } from "jsonwebtoken";
-import { parse } from "cookie";
-import db from "@/lib/db";
+import { NextRequest, NextResponse } from "next/server";
 import { verifyToken } from "./lib/auth";
 
 //Public routes (non-authenticated access allowed)
@@ -97,6 +95,7 @@ export async function middleware(request: NextRequest) {
     verify(token, process.env.JWT_SECRET!);
     return NextResponse.next();
   } catch (error) {
+    console.log(error)
     return NextResponse.redirect(new URL("/login", request.url));
   }
 }

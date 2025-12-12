@@ -41,7 +41,7 @@ export async function GET() {
 
     const data = await res.json();
     return NextResponse.json({ total_users: data.total_count });
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error('Clerk user count error:', error.message || error);
     return NextResponse.json(
       { error: 'Failed to fetch user count' },
