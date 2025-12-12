@@ -4,11 +4,11 @@ import db from '@/lib/db';
 export const dynamic = 'force-dynamic';
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+ { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const perfume_id = parseInt((await params).id, 10);
+    const { id: rawId } = await params;
+    const perfume_id = parseInt(rawId, 10);
     if (isNaN(perfume_id)) {
       return new Response(JSON.stringify({ error: 'Invalid ID' }), { status: 400 });
     }
