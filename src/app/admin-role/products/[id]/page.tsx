@@ -62,7 +62,7 @@ export default function EditProductPage() {
       formData.append('image', fileInputRef.current.files[0]);
     }
 
-    const res = await fetch(`http://localhost:3000/api/admin/edit-product/${id}`, {
+    const res = await fetch(`/api/admin/edit-product/${id}`, {
       method: 'PUT',
       body: formData,
     });
