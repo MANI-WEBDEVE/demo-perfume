@@ -19,12 +19,12 @@ export default function ProductDetail() {
   const { id } = useParams();
   const { addToCart } = useCart();
 
-  const [product, useProduct] = useState<Product>()
+  const [product, setProduct] = useState<Product>()
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`/api/perfume/${id}`); 
-        useProduct(response.data);
+        setProduct(response.data);
       } catch (error) {
         toast.error("Error fetching product data");
       }
