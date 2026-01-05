@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
-import { useCart } from "@/context/CartContext";
+import { CartItem, useCart } from "@/context/CartContext";
 import { useRouter } from "next/navigation";
 
 type CartSidebarProps = {
