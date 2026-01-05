@@ -36,7 +36,7 @@ export default function LoginPage() {
       // success feedback + navigate
       toast.success('Logged in successfully');
       router.back();
-      window.location.reload();
+      // window.location.reload();
     } catch (err: any) {
       const { toast } = await import('react-hot-toast');
       let message = 'Login failed';
