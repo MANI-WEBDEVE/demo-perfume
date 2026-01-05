@@ -26,7 +26,7 @@ export default function ProductsPage() {
         
         setProducts(data); //  State update
       } catch (e: unknown) {
-        toast.error("Error fetching products", (e as Error).message);
+        toast.error("Error fetching products");
       }
     };
     fetchAllProducts();
