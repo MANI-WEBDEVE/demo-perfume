@@ -129,7 +129,7 @@ const [perfumeData, setPerfumeData] = useState<Product[]>([]);
 const [isLoading, setIsLoading] = useState<boolean>(true);
   const get_perfume_data = async() => {
     try{
-      const response = await axios.get(`http://localhost:3000/api/perfumes/`);
+      const response = await axios.get(`/api/perfumes/`);
       setPerfumeData(response.data);  
     }catch(error){
       console.log(error);

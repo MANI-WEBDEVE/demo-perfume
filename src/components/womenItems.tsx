@@ -149,7 +149,7 @@ export default function WomenProducts() {
   useEffect(() => {
     const fetchMenProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/perfumes/", {
+        const response = await axios.get("/api/perfumes/", {
           params: { category: "female" },
         });
         setfemaleProductList(response.data);
