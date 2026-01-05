@@ -20,7 +20,7 @@ const publicPaths = [
 ];
 
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const url = request.nextUrl;
 
   const isAdminRoute = url.pathname.startsWith("/admin-role");
