@@ -33,7 +33,7 @@ export default function LoginPage() {
         router.push("/");
         window.location.reload();
       }
-    } catch (err: unknown) {
+    } catch (err: any) {
       const errorMessage = err.response?.data?.error || "Registration failed";
       setError(errorMessage);
       toast.error(errorMessage);
