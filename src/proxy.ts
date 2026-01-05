@@ -1,4 +1,4 @@
-export const runtime = "nodejs";
+// export const runtime = "nodejs";
 
 import { verify } from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";
