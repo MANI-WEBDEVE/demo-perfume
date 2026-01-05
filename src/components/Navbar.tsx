@@ -69,7 +69,7 @@ export default function Navbar() {
           {/* Right side: Cart */}
           <div className="flex items-center justify-center gap-5">
             <button
-              onClick={() => setCartOpen(true)} // 👈 open sidebar
+              onClick={() => setCartOpen(true)} // open sidebar
               className="relative"
             >
               <ShoppingCart className="w-6 h-6 text-black hover:text-gray-600" />
