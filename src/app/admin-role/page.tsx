@@ -16,7 +16,7 @@ export default function AdminPage() {
         const res = await axios.get("/api/admin/countusers");
         setUserCount(res.data.total_users || 0)
       }catch(e: unknown){
-        toast.error("Failed to fetch user count", (e as Error).message);
+        toast.error("Failed to fetch user count");
       }
     }
 
@@ -26,7 +26,7 @@ export default function AdminPage() {
         setOrderCount(res.data.total_orders || 0)
         setProductCount(res.data.total_products || 0)
       }catch(e: unknown){
-        toast.error("Failed to fetch order and product counts", (e as Error).message);
+        toast.error("Failed to fetch order and product counts");
       }
     }
 
