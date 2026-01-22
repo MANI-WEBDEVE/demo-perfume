@@ -13,6 +13,7 @@ type AdminCred = {
 export async function POST(request:NextRequest) {
     try{
         let {email, password}: AdminCred|any  = await request.json()
+        console.log(email, password)
         email = z.email({pattern: /^(?!\.)(?!.*\.\.)([a-z0-9_'+\-\.]*)[a-z0-9_+-]@([a-z0-9][a-z0-9\-]*\.)+[a-z]{2,}$/i}).parse(email)
         password = z.string().min(6).parse(password)
 
@@ -30,6 +31,7 @@ export async function POST(request:NextRequest) {
 
     // 2. Password match karta hai?
     const isValid = await compare(password, admin.password_hash);
+    console.log(isValid)
     if (!isValid) {
       return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
     }
